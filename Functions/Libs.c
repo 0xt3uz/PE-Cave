@@ -43,3 +43,33 @@ void printDos(IMAGE_DOS_HEADER* myDosHeader) {
 
 	printf("e_lfanew: 0x%X\n", myDosHeader->e_lfanew);
 }
+
+void printFileHeader(IMAGE_FILE_HEADER* myFileHeader) {
+    printf("Machine: 0x%X\n", myFileHeader->Machine);
+    printf("NumberOfSections: %u\n", myFileHeader->NumberOfSections);
+    printf("TimeDateStamp: 0x%X\n", myFileHeader->TimeDateStamp);
+    printf("PointerToSymbolTable: 0x%X\n", myFileHeader->PointerToSymbolTable);
+    printf("NumberOfSymbols: %u\n", myFileHeader->NumberOfSymbols);
+    printf("SizeOfOptionalHeader: %u\n", myFileHeader->SizeOfOptionalHeader);
+    printf("Characteristics: 0x%X\n", myFileHeader->Characteristics);
+}
+
+void printOptionalHeader64(IMAGE_OPTIONAL_HEADER64 myOptionalHeader) {
+    printf("=== IMAGE_OPTIONAL_HEADER64 ===\n");
+    printf("Magic: 0x%X\n", myOptionalHeader.Magic);
+    printf("MajorLinkerVersion: %d\n", myOptionalHeader.MajorLinkerVersion);
+    printf("MinorLinkerVersion: %d\n", myOptionalHeader.MinorLinkerVersion);
+    printf("SizeOfCode: 0x%X\n", myOptionalHeader.SizeOfCode);
+    printf("SizeOfInitializedData: 0x%X\n", myOptionalHeader.SizeOfInitializedData);
+    printf("SizeOfUninitializedData: 0x%X\n", myOptionalHeader.SizeOfUninitializedData);
+    printf("AddressOfEntryPoint: 0x%X\n", myOptionalHeader.AddressOfEntryPoint);
+    printf("BaseOfCode: 0x%X\n", myOptionalHeader.BaseOfCode);
+    printf("ImageBase: 0x%llX\n", myOptionalHeader.ImageBase);
+    printf("SectionAlignment: 0x%X\n", myOptionalHeader.SectionAlignment);
+    printf("FileAlignment: 0x%X\n", myOptionalHeader.FileAlignment);
+    printf("Subsystem: 0x%X\n", myOptionalHeader.Subsystem);
+    printf("DllCharacteristics: 0x%X\n", myOptionalHeader.DllCharacteristics);
+    printf("SizeOfImage: 0x%X\n", myOptionalHeader.SizeOfImage);
+    printf("SizeOfHeaders: 0x%X\n", myOptionalHeader.SizeOfHeaders);
+    printf("===============================\n\n");
+}
